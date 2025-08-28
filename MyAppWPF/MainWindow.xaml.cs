@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace MyAppWPF
 {
-    /// <summary>
+    /// <summary> HELLO
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
