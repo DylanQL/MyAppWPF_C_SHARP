@@ -1,0 +1,56 @@
+<Page x:Class="MyAppWPF.ReporteIngresos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyAppWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Reportes - Ingresos">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Margin="20,20,20,10">
+            <TextBlock Text="Reportes - Ingresos" FontSize="24" FontWeight="Bold" Margin="0,0,0,15"/>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                    <TextBlock Text="Fecha Inicio:" Margin="0,0,0,5"/>
+                    <DatePicker Width="Auto"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" Margin="10,0,10,0">
+                    <TextBlock Text="Fecha Fin:" Margin="0,0,0,5"/>
+                    <DatePicker Width="Auto"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="2" VerticalAlignment="Bottom">
+                    <Button Content="Generar Reporte" Width="120" Height="30" Background="#2c3e50" Foreground="White"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        
+        <DataGrid Grid.Row="1" Margin="20,10,20,20" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Width="80" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Fecha" Width="120" Binding="{Binding Fecha}"/>
+                <DataGridTextColumn Header="Transportista" Width="150" Binding="{Binding Transportista}"/>
+                <DataGridTextColumn Header="Conductor" Width="150" Binding="{Binding Conductor}"/>
+                <DataGridTextColumn Header="Camión" Width="120" Binding="{Binding Camion}"/>
+                <DataGridTextColumn Header="Producto" Width="150" Binding="{Binding Producto}"/>
+                <DataGridTextColumn Header="Cantidad" Width="100" Binding="{Binding Cantidad}"/>
+                <DataGridTextColumn Header="Observaciones" Width="200" Binding="{Binding Observaciones}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
